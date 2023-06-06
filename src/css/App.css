@@ -1,0 +1,18 @@
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  /*background-color: var(--body_background);*/
+  /*color: var(--body_color)*/
+}
+
+
+.dark-mode-toggle {
+  background-color: #fff;
+  color: #222;
+}
+
+.dark-mode-toggle.dark {
+  background-color: #222;
+  color: #fff;
+}
