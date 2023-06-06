@@ -7,14 +7,14 @@ const Experience = () => {
         <section className="experience">
             <h2>Experience</h2>
             <div className="experience-item">
-                <h3>Company A</h3>
-                <p>Position: Intern</p>
-                <p>Year: 2022 - 2023</p>
+                <h3>Best Company</h3>
+                <p>Position: Intern (Backend Java Developer)</p>
+                <p>Year: 2023 - 2024</p>
             </div>
             <div className="experience-item">
-                <h3>Company B</h3>
-                <p>Position: Junior Developer</p>
-                <p>Year: 2021 - 2022</p>
+                <h3>Pizza Hut</h3>
+                <p>Position: Driver</p>
+                <p>Year: 2019 - 2023</p>
             </div>
         </section>
     );

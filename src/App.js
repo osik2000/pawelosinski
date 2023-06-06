@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
 import DarkModeToggle from './components/DarkModeToggle';
@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import './css/App.css';
 import Notfound from "./components/404";
 import NavBar from "./components/navbar";
+import MainPage from "./components/MainPage";
 
 
 const App = () => {
@@ -21,11 +22,10 @@ const App = () => {
         <Router>
             <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
                 <NavBar />
-
                 <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
                 <Routes>
-                    <Route path="/" element={<About />} />
+                    <Route path="/" element={<MainPage />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/education" element={<Education />} />
                     <Route path="/experience" element={<Experience />} />
