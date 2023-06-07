@@ -3,6 +3,11 @@
     width: 100%;
     padding-bottom: 56.25%; /* proporcje 16:9 */
     overflow: hidden;
+
+    box-shadow: var(--navbar_shadow);
+    border-radius: 40px;
+    background-color: var(--body_background);
+    transition: all 0.3s ease-in-out ;
 }
 
 .video-container iframe {

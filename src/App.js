@@ -9,6 +9,7 @@ import './css/App.css';
 import Notfound from "./components/404";
 import NavBar from "./components/navbar";
 import MainPage from "./components/MainPage";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="*" element={<Notfound />} />
                 </Routes>
+                <Footer/>
             </div>
         </Router>
     );

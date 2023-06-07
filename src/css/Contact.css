@@ -2,7 +2,8 @@
     margin-bottom: 40px;
 }
 
-#contact h2 {
+h2 {
+    text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -34,15 +35,13 @@ button {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    /* Responsywność dla ekranów o szerokości do 768px */
+@media (max-width: 600px) {
     .App {
         padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Responsywność dla ekranów o szerokości do 480px */
     form {
         max-width: 100%;
     }

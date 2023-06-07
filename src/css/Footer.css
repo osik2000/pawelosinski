@@ -1,0 +1,25 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    background-color: var(--footer_background);
+    color: var(--body_color);
+
+    transition: all 0.3s ease-in-out;
+
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
