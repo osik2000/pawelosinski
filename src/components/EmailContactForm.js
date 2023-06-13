@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import {useRef, useState} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
@@ -7,30 +7,43 @@ import Alert from "./Alert";
 
 
 
-const EmailContactForm = () => {
+const EmailContactForm = ({handleFailChange, handleSwitchPopup, showPopup}) => {
 
-    const notify = () => toast("Wow so easy!");
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [message, setMessage] = useState('');
     const form = useRef();
+
+    const clearForm = () => {
+        setName('');
+        setEmail('');
+        setMessage('');
+    }
+
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Logika obsługi wysyłania formularza
-        // emailjs.sendForm(
-        //     process.env.REACT_APP_SERVICE_ID,
-        //     process.env.REACT_APP_TEMPLATE_ID,
-        //     form.current,
-        //     process.env.REACT_APP_PUBLIC_KEY
-        // )
-        //     .then((result) => {
-        //         // show the user a success message
-        //     }, (error) => {
-        //         // show the user an error
-        //     });
+        //  emailjs.sendForm(
+        //      process.env.REACT_APP_SERVICE_ID,
+        //      process.env.REACT_APP_TEMPLATE_ID,
+        //      form.current,
+        //      process.env.REACT_APP_PUBLIC_KEY
+        //  )
+        //      .then((result) => {
+        //          handleFailChange(false);
+        //          clearForm();
+        //      }, (error) => {
+        //          handleFailChange(true);
+        //      });
+        handleFailChange(true);
+
+
+        handleSwitchPopup(true);
+
+        
 
     };
 
@@ -44,8 +57,8 @@ const EmailContactForm = () => {
                         type="text"
                         id="name"
                         name="name"
-                        // value={name}
-                        // onChange={(e) => setName(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         required
                     />
 
@@ -54,8 +67,8 @@ const EmailContactForm = () => {
                         type="email"
                         id="email"
                         name="email"
-                        // value={email}
-                        // onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
 
@@ -63,8 +76,8 @@ const EmailContactForm = () => {
                     <textarea
                         id="message"
                         name="message"
-                        // value={message}
-                        // onChange={(e) => setMessage(e.target.value)}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         required
                     ></textarea>
 
