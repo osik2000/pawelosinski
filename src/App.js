@@ -10,6 +10,7 @@ import Notfound from "./components/404";
 import NavBar from "./components/navbar";
 import MainPage from "./components/MainPage";
 import Footer from "./components/Footer";
+import ParticleBackground from "./components/ParticleBackground";
 
 
 const App = () => {
@@ -19,12 +20,14 @@ const App = () => {
         setDarkMode(!darkMode);
     };
 
+
     return (
+
         <Router>
             <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
                 <NavBar />
                 <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
+                <ParticleBackground/>
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/about" element={<About />} />
