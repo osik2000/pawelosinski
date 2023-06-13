@@ -1,8 +1,19 @@
-import React from 'react';
+import {useState} from 'react';
 import '../css/Contact.css'
 import EmailContactForm from "./EmailContactForm";
 
 const Contact = () => {
+    const [showPopup, setShowPopup] = useState(false);
+    const [isFailed, setIsFailed] = useState(false);
+
+    const handleSwitchPopup = (state) => {
+        setShowPopup(state);
+    }
+
+    const handleFailChange = (state) => {
+        setIsFailed(state);
+    }
+
     return (
         <section className="contact">
             <h2>Contact</h2>
@@ -14,7 +25,17 @@ const Contact = () => {
                 <h3>Linked-in</h3>
                 <p>pawelosinski</p>
             </div>
-            <EmailContactForm/>
+            { showPopup &&
+                <dialog open className={`alert ${isFailed? 'error' : ''}`}>
+                    {isFailed?
+                    <span> Nie udało się wysłać wiadomości.</span>:
+                    <span> Wysłano wiadomość!</span>
+                    }
+                    <button onClick={() => {handleSwitchPopup(false)} } className='exit'> X </button>
+                </dialog>
+            }
+
+            <EmailContactForm handleFailChange={handleFailChange} handleSwitchPopup={handleSwitchPopup} showPopup={showPopup} />
 
         </section>
     );
