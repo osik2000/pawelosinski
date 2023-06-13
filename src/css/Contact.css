@@ -6,7 +6,17 @@
     inset: 0;
     background: lightgreen;
     position: relative;
+    width: 35%;
+    max-width: 80%;
+}
 
+
+.alert.error {
+    background: #FFCCCB;
+}
+
+.alert.sending {
+    background: lightgray;
 }
 
 .exit {
@@ -18,9 +28,7 @@
     cursor: pointer;
 }
 
-.alert.error {
-    background: #FFCCCB;
-}
+
 
 h2 {
     text-align: center;

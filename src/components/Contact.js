@@ -5,6 +5,7 @@ import EmailContactForm from "./EmailContactForm";
 const Contact = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [isFailed, setIsFailed] = useState(false);
+    const [isTryingToSend, setIsTryingToSend] = useState(false);
 
     const handleSwitchPopup = (state) => {
         setShowPopup(state);
@@ -12,6 +13,10 @@ const Contact = () => {
 
     const handleFailChange = (state) => {
         setIsFailed(state);
+    }
+
+    const handleTryingToSend = (state) => {
+        setIsTryingToSend(state);
     }
 
     return (
@@ -25,17 +30,23 @@ const Contact = () => {
                 <h3>Linked-in</h3>
                 <p>pawelosinski</p>
             </div>
-            { showPopup &&
-                <dialog open className={`alert ${isFailed? 'error' : ''}`}>
-                    {isFailed?
-                    <span> Nie udało się wysłać wiadomości.</span>:
-                    <span> Wysłano wiadomość!</span>
+            {showPopup &&
+                <dialog open className={`alert ${isTryingToSend? 'sending' : isFailed ? 'error' : ''}`}>
+                    {isTryingToSend?
+                        <span> Wysyłanie wiadomości...</span> :
+                        isFailed ?
+                        <span> Nie udało się wysłać wiadomości.</span> :
+                        <span> Wysłano wiadomość!</span>
                     }
-                    <button onClick={() => {handleSwitchPopup(false)} } className='exit'> X </button>
+                    <button onClick={() => {
+                        handleSwitchPopup(false)
+                    }} className='exit'> X
+                    </button>
                 </dialog>
             }
 
-            <EmailContactForm handleFailChange={handleFailChange} handleSwitchPopup={handleSwitchPopup} showPopup={showPopup} />
+            <EmailContactForm handleFailChange={handleFailChange} handleSwitchPopup={handleSwitchPopup}
+                              showPopup={showPopup} handleIsTryingToSend={handleTryingToSend}/>
 
         </section>
     );

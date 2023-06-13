@@ -1,13 +1,12 @@
 import {useRef, useState} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 import '../css/Contact.css'
 import Alert from "./Alert";
 
 
-
-const EmailContactForm = ({handleFailChange, handleSwitchPopup, showPopup}) => {
+const EmailContactForm = ({handleFailChange, handleSwitchPopup, showPopup, handleIsTryingToSend}) => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -21,30 +20,27 @@ const EmailContactForm = ({handleFailChange, handleSwitchPopup, showPopup}) => {
         setMessage('');
     }
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
+        handleIsTryingToSend(true);
         // Logika obsługi wysyłania formularza
-        //  emailjs.sendForm(
-        //      process.env.REACT_APP_SERVICE_ID,
-        //      process.env.REACT_APP_TEMPLATE_ID,
-        //      form.current,
-        //      process.env.REACT_APP_PUBLIC_KEY
-        //  )
-        //      .then((result) => {
-        //          handleFailChange(false);
-        //          clearForm();
-        //      }, (error) => {
-        //          handleFailChange(true);
-        //      });
-        handleFailChange(true);
+        // emailjs.sendForm(
+        //     process.env.REACT_APP_SERVICE_ID,
+        //     process.env.REACT_APP_TEMPLATE_ID,
+        //     form.current,
+        //     process.env.REACT_APP_PUBLIC_KEY
+        // )
+        //     .then((result) => {
+        //         handleIsTryingToSend(false);
+        //         handleFailChange(false);
+        //         clearForm();
+        //     }, (error) => {
+        //         handleIsTryingToSend(false);
+        //         handleFailChange(true);
+        //     });
 
 
         handleSwitchPopup(true);
-
-        
-
     };
 
     return (
