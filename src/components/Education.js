@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../css/Education.css'
 
 const Education = () => {
+    useEffect(() => {
+        document.title = `Paweł Osiński | Education`;
+    }, []);
+
     return (
         <section className="education">
             <h2>Education</h2>

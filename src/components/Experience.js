@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../css/Experience.css'
 
 
 const Experience = () => {
+    useEffect(() => {
+        document.title = `Paweł Osiński | Experience`;
+    }, []);
+
     return (
         <section className="experience">
             <h2>Experience</h2>

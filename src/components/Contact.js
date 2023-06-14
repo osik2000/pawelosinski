@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import '../css/Contact.css'
 import EmailContactForm from "./EmailContactForm";
 import {
@@ -32,6 +32,10 @@ const Contact = () => {
         window.open(url, '_blank');
     };
 
+    useEffect(() => {
+        document.title = `Paweł Osiński | Contact`;
+    }, []);
+
     return (
         <section id="contact">
             <h2>Contact</h2>
@@ -41,11 +45,13 @@ const Contact = () => {
                         <FontAwesomeIcon icon={faGithub} size="5x" className="icon"/>
                         <h3>GitHub</h3>
                     </div>
-                    <div className="link" onClick={() => handleOpenWebsite("https://www.linkedin.com/in/pawelosinski000/")}>
-                        <FontAwesomeIcon icon={faLinkedin} size="5x" className="icon" />
+                    <div className="link"
+                         onClick={() => handleOpenWebsite("https://www.linkedin.com/in/pawelosinski000/")}>
+                        <FontAwesomeIcon icon={faLinkedin} size="5x" className="icon"/>
                         <h3>LinkedIn</h3>
                     </div>
-                    <div className="link" onClick={() => handleOpenWebsite("https://open.spotify.com/user/11122212763")}>
+                    <div className="link"
+                         onClick={() => handleOpenWebsite("https://open.spotify.com/user/11122212763")}>
                         <FontAwesomeIcon icon={faSpotify} size="5x" className="icon"/>
                         <h3>Spotify</h3>
                     </div>

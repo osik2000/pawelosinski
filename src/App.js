@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -15,24 +15,28 @@ import ParticleBackground from "./components/ParticleBackground";
 
 const App = () => {
 
-    return (
+    useEffect(() => {
+        document.title = `Paweł Osiński | Portfolio`;
+    }, []);
 
-        <Router>
-            <div className='App'>
-                <NavBar />
+
+    return (
+        <div className='App'>
+            <Router>
+                <NavBar/>
                 <DarkModeToggle/>
                 <ParticleBackground/>
                 <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/education" element={<Education />} />
-                    <Route path="/experience" element={<Experience />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="*" element={<Notfound />} />
+                    <Route path="/" element={<MainPage/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/education" element={<Education/>}/>
+                    <Route path="/experience" element={<Experience/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="*" element={<Notfound/>}/>
                 </Routes>
                 <Footer/>
-            </div>
-        </Router>
+            </Router>
+        </div>
     );
 }
 

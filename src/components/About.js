@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Video from './Video';
 import '../css/About.css'
 
 const About = () => {
+
+    useEffect(() => {
+        document.title = `Paweł Osiński | About`;
+    }, []);
+
     return (
         <section id="about">
             <h2>About Me</h2>
