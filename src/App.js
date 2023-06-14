@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -14,19 +14,13 @@ import ParticleBackground from "./components/ParticleBackground";
 
 
 const App = () => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
-
 
     return (
 
         <Router>
-            <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+            <div className='App'>
                 <NavBar />
-                <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                <DarkModeToggle/>
                 <ParticleBackground/>
                 <Routes>
                     <Route path="/" element={<MainPage />} />

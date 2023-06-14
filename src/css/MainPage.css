@@ -1,5 +1,6 @@
 #mainpage {
     margin-bottom: 40px;
+    margin-right: 20px;
 }
 
 #mainpage h1 {
@@ -25,6 +26,8 @@
     align-items: center;
     box-shadow: var(--navbar_shadow);
     margin-bottom: 50px;
+    background-color: var(--body_background);
+    transition: background 0.3s ease-in-out ;
 }
 
 #mainpage .text {
@@ -52,9 +55,9 @@
 @media (max-width: 800px) {
     #mainpage .content {
         justify-content: center;
-        margin: auto;
         display: block;
         width: 100%;
+        padding: 10px;
     }
 
     #mainpage img{
@@ -63,12 +66,13 @@
 
     #mainpage .image{
         justify-content: center;
-        margin: auto;
         padding-top: 35px;
+        margin-right: 15px;
     }
 
     #mainpage .text{
-        margin-right: 0;
+        /*margin-right: 0;*/
+        margin-left: 15px;
     }
 
 }

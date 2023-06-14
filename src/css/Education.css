@@ -19,3 +19,32 @@
 .education-item p {
     margin: 0;
 }
+
+.education .content {
+    padding: 25px;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: var(--navbar_shadow);
+    margin-bottom: 50px;
+    background-color: var(--body_background);
+    transition: background 0.3s ease-in-out;
+}
+
+.education .text {
+    flex: 1;
+    line-height: 1.6;
+    padding: 15px;
+    box-shadow: var(--navbar_shadow);
+    margin: 50px 15px;
+    text-align: center;
+}
+
+
+
+@media (max-width: 800px) {
+    .education .content {
+        justify-content: center;
+        display: block;
+    }
+
+}

@@ -27,6 +27,7 @@
     border-radius: 40px;
     background-color: var(--body_background);
     transition: all 0.3s ease-in-out ;
+    z-index: 3;
 }
 
 .nav-list {
@@ -63,7 +64,7 @@
         margin-left: 25%;
         margin-right: 25%;
         width: 80%;
-        font-size: 80%;
+        /*font-size: 80%;*/
     }
 
     .nav-background {
@@ -81,7 +82,8 @@
         margin-left: 25%;
         margin-right: 25%;
         width: 80%;
-        font-size: 80%;
+        font-size: 75%;
+        line-height: 20px;
     }
 
     .nav-background {

@@ -1,10 +1,13 @@
 .dark_mode {
     margin-top: -20px;
     margin-left: 10px;
+    z-index: 0;
+    width: 0;
+    height: 0;
+    margin-bottom: 50px;
 }
 
 .dark-mode-toggle {
-
 }
 
 .dark_mode_label {
@@ -81,9 +84,12 @@
 }
 @media (max-width: 450px) {
     .dark_mode {
+        width: 0;
+        height: 0;
         margin-top: -20px;
         margin-left: 10px;
-        margin-bottom: 60px;
+        margin-bottom: 90px;
+        z-index: 5;
     }
 
     .dark_mode_label {
